@@ -1,11 +1,20 @@
 import * as React from "react";
 import './message.css'
 
-class Message extends React.Component{
+export default function MessageDesk({data}){
 
-    render() {
-        return (<h1 className='message'>{this.props.text}</h1>);
-    }
+
+    return (
+        <div>
+            {data.map((item, id) => (
+                <p>
+                    <h3>{id}. {item.message}</h3>
+                    Написал: {item.author}
+                    <hr/>
+                </p>
+            ))}
+        </div>
+    );
+
 }
 
-export default Message
